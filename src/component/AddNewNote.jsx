@@ -1,14 +1,17 @@
+import { useState } from "react";
 import "../App.css";
 function AddNewNote() {
+    const [title,setTitle]=useState("");
+    const [description,setDescription]=useState("");
     const handleSubmit=(e)=>{
-        e.preventDefault();
+        e.preventDefault(); {/** for prevent refresh on first load */}
     }
   return (
     <div className="add-new-note">
       <h2>Add New Note</h2>
       <form className="note-form" onSubmit={handleSubmit}>  {/*onSubmit Event for user press enter - data in input send to server*/} 
-        <input type="text" className="text-field" placeholder="titel"/>
-        <input type="text" className="text-field" placeholder="description"/>
+        <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} className="text-field" placeholder="titel"/>
+        <input type="text" value={description} onChange={(e)=>setDescription(e.target.value)} className="text-field" placeholder="description"/>
         <button type="submit" className="btn btn--primary">Add New Note</button>
       </form>
     </div>
