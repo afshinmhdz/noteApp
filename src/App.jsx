@@ -1,4 +1,5 @@
-import "./App.css";
+import "../src/App.css";
+import "../src/index.css"
 import AddNewNote from "./component/AddNewNote";
 function App() {
   return (
