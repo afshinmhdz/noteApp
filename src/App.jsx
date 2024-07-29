@@ -1,8 +1,10 @@
+import { useState } from "react";
 import "../src/App.css";
 import "../src/index.css"
 import AddNewNote from "./component/AddNewNote";
 import NoteList from "./component/NoteList";
 function App() {
+  const [notes, setNotes] = useState([]);
   return (
     <>
       <div className="container">

@@ -3,7 +3,6 @@ import "../App.css";
 function AddNewNote() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [notes, setNotes] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
     {
