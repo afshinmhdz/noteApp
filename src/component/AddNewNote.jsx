@@ -5,6 +5,15 @@ function AddNewNote() {
     const [description,setDescription]=useState("");
     const handleSubmit=(e)=>{
         e.preventDefault(); {/** for prevent refresh on first load */}
+        const newNote={
+            id:Date.now(),
+            title,
+            description,
+            completed:false,
+            createdAt:new Date().toISOString()
+        }
+        setTitle("");
+        setDescription("");
     }
   return (
     <div className="add-new-note">
