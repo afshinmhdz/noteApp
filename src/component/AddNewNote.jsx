@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../App.css";
-function AddNewNote() {
+function AddNewNote({onAddNote}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const handleSubmit = (e) => {
@@ -8,6 +8,7 @@ function AddNewNote() {
     {
       /** for prevent refresh on first load */
     }
+    if(!title || !description) return null; {/** if user not input anything return null and don't create note*/}
     const newNote = {
       id: Date.now(),
       title,
@@ -17,10 +18,7 @@ function AddNewNote() {
     };
     setTitle("");
     setDescription("");
-    setNotes((prevNotes) => {
-      return [...prevNotes, newNote];
-      
-    });
+    onAddNote(newNote);
   };
   return (
     <div className="add-new-note">
