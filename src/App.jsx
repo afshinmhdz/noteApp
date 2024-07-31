@@ -34,7 +34,7 @@ function App() {
   if (sortby === "latest")
     sortedNotes=[...notes].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   if (sortby === "completed")
-    sortedNotes=[...notes].sort((a, b) => Number((a.completed)) - Number((b.completed)));
+    sortedNotes=[...notes].sort((a, b) => Number((b.completed)) - Number((a.completed)));
 
   return (
     <>
@@ -51,7 +51,7 @@ function App() {
           <div className="note-container">
             <NoteStatus notes={notes} />
             <NoteList
-              notes={notes}
+              notes={sortedNotes}
               onDeleteNote={handleDelete}
               onCompleteNote={handleCompleted}
             />
