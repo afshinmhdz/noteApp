@@ -2,7 +2,7 @@ import React from "react";
 
 function NoteStatus({notes}) {
 
-    if(!notes) return <h2 className="message">No Notes has already been added</h2>
+    if(!notes.length) return <h2 className="message">No Notes has already been added</h2>
     let completed=0
     completed=notes.filter((item)=>item.completed===true).length;
     console.log(completed);
