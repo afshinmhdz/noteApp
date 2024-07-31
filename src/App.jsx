@@ -3,6 +3,7 @@ import "../src/App.css";
 import "../src/index.css";
 import AddNewNote from "./component/AddNewNote";
 import NoteList from "./component/NoteList";
+import NoteStatus from "./component/NoteStatus";
 function App() {
   const [notes, setNotes] = useState([]);
   const handleAddNote = (newNote) => {
@@ -24,10 +25,12 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className="note-header"></div>
+        <div className="note-header">
+        </div>
         <div className="note-app">
           <AddNewNote onAddNote={handleAddNote} />
           <div className="note-container">
+        <NoteStatus notes={notes}/>
             <NoteList
               notes={notes}
               onDeleteNote={handleDelete}
